@@ -150,6 +150,10 @@ section img {
   border-radius: .25rem;
 }
 
+#dog-detail li img {
+  line-height: 1;
+}
+
 @media(max-width: 46.88rem) {
   #breeds li {
     width: 100%

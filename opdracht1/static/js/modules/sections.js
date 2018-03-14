@@ -22,6 +22,9 @@ const sections = {
           helpers.loader.hide()
         })
       })
+      setTimeout(() => {
+        helpers.loader.hide()
+      }, 5000)
     } else {
       helpers.loader.hide()
     }

@@ -24,6 +24,14 @@ const template = {
         detailPicture: {
           src: function () {
             return `${this.value}`
+          },
+          alt: function () {
+            return `${this.value}`
+          }
+        },
+        detailLink: {
+          href: function () {
+            return `${this.value}`
           }
         }
       }
