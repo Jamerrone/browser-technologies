@@ -1,5 +1,7 @@
 # Browser Technologies
 
+Assignment 1.1 can be found by the name: opdracht-1.1.key
+
 ## [N] Feature 1 - Images
 My JavaScript checks if the first 30 requested images are loaded or not. In case they are, it hides my loader. However, this also means that if the requested image is not loaded the users will be stuck in an infinite loop.
 
