@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Dog Emporium</title>
+  <link rel="stylesheet" href="static/css/main.css">
+</head>
+
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#breeds">Breeds</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <div id="loader">
+      <img src="static/images/loading.gif">
+      <p>Loading...</p>
+    </div>
+    <section id="home">
+      <h1>Woof</h1>
+      <blockquote id="fact">"The first dog chapel was established in 2001. It was built in St. Johnsbury, Vermont, by Stephan Huneck, a children’s book author whose five dogs helped him recuperate from a serious illness."</blockquote>
+      <button>Give me another fact!</button>
+    </section>
+    <section id="breeds">
+      <p class="error-message"><img src="static/images/error-image.gif"></img>Could not connect to the API Server / Network - Please make sure you have a stable internet connection.</p>
+      <form>
+        <input id="search" type="text" placeholder="Search..." autocomplete="off" autofocus>
+      </form>
+      <ul id="dog-breeds">
+        <li><a class="dogBreed"></a></li>
+      </ul>
+    </section>
+    <section id="detail">
+      <ul id="dog-detail">
+        <li><img class="detailPicture"></li>
+      </ul>
+    </section>
+  </main>
+
+  <script src="static/js/libraries/routie.js"></script>
+  <script src="static/js/libraries/transparency.js"></script>
+  <script src="static/js/app.js" type="module"></script>
+</body>
+
+</html>
