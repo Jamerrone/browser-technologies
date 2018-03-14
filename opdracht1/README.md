@@ -8,6 +8,8 @@ I have added a 5-second timeout. The loader will automatically disappear after t
 
 I have come up with a working solution. First of all, I have added an alt attribute to each image with the image source. Next, I wrapped each image in its own "a" tag. In case an image can't be loaded, the user is still able to visit the original URL using the alt attribute in combination with the "a" tag.
 
+![](./static/images/image.png)
+
 
 ## [Y] Feature 2 - Internet
 The dogs API used for this web application is by nature extremely fast. All the rendered images are small and optimized. Storing data in memory and cache limitates the number of requests and bandwidth needed.
