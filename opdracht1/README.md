@@ -65,7 +65,7 @@ Just as expected multiple devices could not render my web application. However, 
 
 * All other devices rendered my web app as normal and worked as expected.
 
-**Passes:** 2
+**Passes:** 3<br>
 **Fails:** 3
 
 ## [Y] Screen Reader (Mac Voice Over)
