@@ -56,7 +56,7 @@ Even though I didn't pay much attention to accessibility while developing the wa
 #### Fixes: Added some custom focus states.
 
 ## [Y] Device Lab
-![](./static/images/device-lab.jpeg)
+![](./static/images/device-lab.JPEG)
 Just as expected multiple devices could not render my web application.
 
 * The Nokia Windows phone and some other Chinese Android phone only rendered my navigation. I am not sure but I think that they do not support JavaScript at all because the navigation is the only element not rendered my JavaScript.
