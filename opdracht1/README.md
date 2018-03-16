@@ -57,15 +57,16 @@ Even though I didn't pay much attention to accessibility while developing the wa
 
 ## [Y] Device Lab
 ![](./static/images/device-lab.JPEG)
-Just as expected multiple devices could not render my web application.
+Just as expected multiple devices could not render my web application. However, the test results were worst then I originally expected. This made me realize how hard it is to support older devices and how important testing actually is. From now on I will always try to make use of testing opportunities given to me, for example, the device lab.
 
-* The Nokia Windows phone and some other Chinese Android phone only rendered my navigation. I am not sure but I think that they do not support JavaScript at all because the navigation is the only element not rendered my JavaScript.
+* The Nokia Windows phone and some other Chinese Android phone only rendered my navigation. I am not sure why but I think that they do not support JavaScript at all because the navigation is the only component not rendered my JavaScript.
 
 * The Kindle did not render anything at all my guess is JS support (again).
 
 * All other devices rendered my web app as normal and worked as expected.
 
-**Passes:** 2<br>
+**Passes:** 2
 **Fails:** 3
 
 ## [Y] Screen Reader (Mac Voice Over)
+It works, however, the experience is very bad. The fact that my only content are images does not help. In order to fix feature "1" I added the image source in the alt attribute, this means that the screen reader will read every single alt. Most pages include over 200 images, you can imagine why the experience is bad. I will need to invest more time investigating this topic but I will leave this as a TODO for another time.
