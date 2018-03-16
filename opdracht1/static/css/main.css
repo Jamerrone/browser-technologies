@@ -47,6 +47,7 @@ nav a {
 }
 
 nav a:hover,
+nav a:focus,
 nav a.active {
   background: #d32f2f;
 }
@@ -98,7 +99,8 @@ section img {
   background-color: #e74c3c;
 }
 
-#home button:hover {
+#home button:hover,
+#home button:focus  {
   background-color: #d32f2f;
 }
 
