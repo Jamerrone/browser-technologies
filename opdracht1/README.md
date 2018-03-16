@@ -30,13 +30,13 @@ My font stack contains only default system fonts.
 
 ## [Y] Feature 5 - Color
 Tested for:
-[x] Deuteranopia
-[x] Deuteranomaly
-[x] Protonopia
-[x] Protonomaly
-[x] Tritanopia
-[x] Tritanomaly
-[x] Grayscale
+- [x] Deuteranopia
+- [x] Deuteranomaly
+- [x] Protonopia
+- [x] Protonomaly
+- [x] Tritanopia
+- [x] Tritanomaly
+- [x] Grayscale
 
 #### Fixes: Non needed.
 
