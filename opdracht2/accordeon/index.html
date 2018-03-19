@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Accordion</title>
+
+  <style>
+    *,
+    *:before,
+    *:after {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: sans-serif;
+    }
+
+    ol {
+      background-color: #eee;
+      border: 1px solid #222;
+      list-style: none;
+      margin: 0 auto;
+      max-width: 45rem;
+      width: 100%;
+    }
+
+    li {
+      border-bottom: 1px solid #222;
+    }
+
+    li:last-of-type {
+      border: none;
+    }
+
+    summary {
+      cursor: pointer;
+      padding: 0.5rem;
+    }
+
+    p {
+      background-color: #fff;
+      border-top: 1px solid #222;
+      padding: 0.5rem;
+    }
+
+    .show {
+      display: block;
+    }
+
+    .hide {
+      display: none;
+    }
+
+  </style>
+</head>
+
+<body>
+  <ol>
+    <li>
+      <details>
+        <summary class="accordion-title" data-content="0">Item 1</summary>
+        <p id="0" class="accordion-content">Item 1 Description</p>
+      </details>
+    </li>
+    <li>
+      <details>
+        <summary class="accordion-title" data-content="1">Item 2</summary>
+        <p id="1" class="accordion-content">Item 2 Description</p>
+      </details>
+    </li>
+    <li>
+      <details>
+        <summary class="accordion-title" data-content="2">Item 3</summary>
+        <p id="2" class="accordion-content">Item 3 Description</p>
+      </details>
+    </li>
+  </ol>
+
+  <script>
+    if (document.createElement('details').open === undefined) {
+      var accordionTitle = document.querySelectorAll('.accordion-title')
+      var accordionContenet = document.querySelectorAll('.accordion-content')
+      for (var i = 0; i < accordionContenet.length; i++) {
+        accordionContenet[i].classList.add('hide')
+      }
+      for (var j = 0; j < accordionTitle.length; j++) {
+        accordionTitle[j].addEventListener('click', function (env) {
+          var dataContent = this.getAttribute('data-content')
+          accordionContenet[dataContent].classList.toggle('hide')
+          accordionContenet[dataContent].classList.toggle('show')
+        })
+      }
+    }
+  </script>
+</body>
+
+</html>
