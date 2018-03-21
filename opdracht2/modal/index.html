@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Modal/Dialog/Overlay</title>
+
+  <style>
+    *,
+    *:before,
+    *:after {
+      margin: 0;
+      padding: 0;
+      transition: all 0.2s ease-in-out;
+    }
+
+    body {
+      font-family: sans-serif;
+    }
+
+    a {
+      background-color: #33aaff;
+      border-radius: 0.25rem;
+      box-shadow: 0 20px 30px -11px rgba(31,35,65,0.37);
+      color: #fff;
+      display: block;
+      left: 50%;
+      letter-spacing: 2px;
+      max-width: 15rem;
+      padding: 1rem;
+      position: absolute;
+      text-align: center;
+      text-decoration: none;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      transition: background-color 0.2s ease-in-out;
+      width: 100%;
+    }
+
+    a:hover,
+    a:focus {
+      background-color: #1b73b3;
+    }
+
+    p {
+      margin-bottom: 1rem;
+    }
+
+    p:last-of-type {
+      margin-bottom: none;
+    }
+
+    dialog {
+      background-color: #fefefe;
+      border-radius: 0.25rem;
+      border: 1px solid #eee;
+      box-shadow: 0 20px 30px -11px rgba(31,35,65,0.10);
+      margin: 0 auto;
+      max-width: 60rem;
+      padding: 2rem;
+      position: fixed;
+      top: 3%;
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body>
+  <a id="algemeneVoorwaarden" href="./algemene-voorwaarden.html">Algemene Voorwaarden</a>
+
+  <script>
+    if ('open' in document.createElement('dialog')) {
+      const dialog = document.createElement('dialog')
+      document.getElementById('algemeneVoorwaarden').addEventListener('click', (e) => {
+        dialog.open ? dialog.open = false : dialog.open = true
+        fetch('./algemene-voorwaarden.html')
+        .then((resp)=> resp.text())
+        .then((text) => dialog.innerHTML = text)
+        document.body.appendChild(dialog)
+        e.preventDefault()
+      })
+    }
+  </script>
+</body>
+
+</html>
