@@ -37,8 +37,15 @@
     }
 
     summary {
+      display: block;
       cursor: pointer;
       padding: 0.5rem;
+      transition: background-color 0.2s ease-in-out;
+    }
+
+    summary:focus,
+    summary:hover {
+      background-color: #ddd;
     }
 
     p {
@@ -62,37 +69,36 @@
   <ol>
     <li>
       <details>
-        <summary class="accordion-title" data-content="0">Item 1</summary>
-        <p id="0" class="accordion-content">Item 1 Description</p>
+        <summary class="accordion-title">Item 1</summary>
+        <p class="accordion-content">Item 1 Description</p>
       </details>
     </li>
     <li>
       <details>
-        <summary class="accordion-title" data-content="1">Item 2</summary>
-        <p id="1" class="accordion-content">Item 2 Description</p>
+        <summary class="accordion-title">Item 2</summary>
+        <p class="accordion-content">Item 2 Description</p>
       </details>
     </li>
     <li>
       <details>
-        <summary class="accordion-title" data-content="2">Item 3</summary>
-        <p id="2" class="accordion-content">Item 3 Description</p>
+        <summary class="accordion-title">Item 3</summary>
+        <p class="accordion-content">Item 3 Description</p>
       </details>
     </li>
   </ol>
 
   <script>
-    if (document.createElement('details').open === undefined) {
-      var accordionTitle = document.querySelectorAll('.accordion-title')
-      var accordionContenet = document.querySelectorAll('.accordion-content')
-      for (var i = 0; i < accordionContenet.length; i++) {
-        accordionContenet[i].classList.add('hide')
-      }
-      for (var j = 0; j < accordionTitle.length; j++) {
-        accordionTitle[j].addEventListener('click', function (env) {
-          var dataContent = this.getAttribute('data-content')
-          accordionContenet[dataContent].classList.toggle('hide')
-          accordionContenet[dataContent].classList.toggle('show')
-        })
+    if (!('open' in document.createElement('details'))) {
+      if (document.querySelectorAll && document.createElement('_').classList) {
+        var accordionTitle = document.querySelectorAll('.accordion-title')
+        for (var j = 0; j < accordionTitle.length; j++) {
+          accordionTitle[j].parentNode.childNodes[3].classList.add('hide')
+          accordionTitle[j].addEventListener('click', function (env) {
+            var dataContent = this.getAttribute('data-content')
+            this.parentNode.childNodes[3].classList.toggle('hide')
+            this.parentNode.childNodes[3].classList.toggle('show')
+          })
+        }
       }
     }
   </script>
