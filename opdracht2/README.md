@@ -49,8 +49,7 @@ Users that use other unsupported browsers are linked to another page where the r
 Fancy ```dialog``` + ```fetch``` experience.
 ![Modal Google Chrome](./images/m-chrome.png)
 
-### Firefox & Internet Explorer 10
+### Other Browsers
 
 100% working fallback.
-![Accordion Firefox](./images/m-firefox.png)
 ![Accordion Internet Explorer](./images/m-ie.png)
