@@ -34,6 +34,10 @@ JavaScript enhanced behavior.
 ![Accordion Firefox](./images/a-firefox.png)
 ![Accordion Internet Explorer](./images/a-ie.png)
 
+### Older Mobile Devices
+
+![Older Mobile Devices](./images/device-lab.jpeg)
+
 ## Modal / Dialog Tag
 
 ![Modal Code Image](./images/modal.png)
