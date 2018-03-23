@@ -1,7 +1,7 @@
 # Browser Technologies - Asigment 2
 
-* GitHub pages for the: [Accordion / Details Tag]()
-* GitHub pages for the: [Modal / Dialog Tag]()
+* GitHub pages for the: [Accordion / Details Tag](https://jamerrone.github.io/browser-technologies/opdracht2/accordeon/)
+* GitHub pages for the: [Modal / Dialog Tag](https://jamerrone.github.io/browser-technologies/opdracht2/modal/)
 
 **Warning:** *While I did style some elements, this was not my main focus during this assignment. Some elements may look odd or out of place, please ignore the oddities and focus on the functionality and progressive enhancements techniques used.*
 
