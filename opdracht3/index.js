@@ -104,8 +104,12 @@ function draw () {
     ctx.fillStyle = '#000000'
     snake.update()
     snake.show()
-    ctx.fillText(`Score: ${currentScore}`, 5, 50)
-    ctx.fillText(`HighScore: ${highScore}`, 5, 25)
+    if (document.cookie) {
+      ctx.fillText(`HighScore: ${highScore}`, 5, 25)
+      ctx.fillText(`Score: ${currentScore}`, 5, 50)
+    } else {
+      ctx.fillText(`Score: ${currentScore}`, 5, 25)
+    }
   }, 1000 / fps)
 }
 
@@ -151,8 +155,6 @@ function keyPressed (e) {
     }
   }
 }
-
-document.onkeyup = keyPressed
 
 if ('webkitSpeechRecognition' in window) {
   var recognition = new webkitSpeechRecognition()
@@ -206,6 +208,8 @@ if ('webkitSpeechRecognition' in window) {
     }
   }
 }
+
+document.onkeyup = keyPressed
 
 setup()
 draw()
