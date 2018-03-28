@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Snake 2</title>
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0
+    }
+
+    canvas {
+      background-color: #96C401;
+      border-radius: 3px;
+      border: 5px solid black;
+      display: block;
+      margin: 0 auto 1rem;
+    }
+
+    button {
+      background-color: #222222;
+      border-radius: 3px;
+      border-top: none;
+      border: 2px solid #000000;
+      color: #EEEEEE;
+      cursor: pointer;
+      font-family: monospace;
+      font-size: 2rem;
+      font-weight: bold;
+      height: 4rem;
+      line-height: 2rem;
+      margin-right: 1rem;
+      width: 4rem;
+    }
+
+    button:last-of-type {
+      margin-right: 0;
+    }
+
+    button:hover,
+    button:focus {
+      border: 2px solid tomato;
+    }
+
+    button[disabled] {
+      visibility: hidden;
+    }
+
+    #gamepad {
+      text-align: center;
+    }
+
+    #gamepad div {
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
+
+<body>
+  <canvas id="canvas"></canvas>
+  <section id="gamepad">
+    <div>
+      <button id="up">&#8593;</button>
+    </div>
+    <div>
+      <button id="left">&#8592;</button>
+      <button id="voice" disabled>V</button>
+      <button id="right">&#8594;</button>
+    </div>
+    <div>
+      <button id="down">&#8595;</button>
+    </div>
+  </section>
+  <script src="./index.js"></script>
+</body>
+
+</html>
