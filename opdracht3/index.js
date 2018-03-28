@@ -1,13 +1,15 @@
 var canvas = document.getElementById('canvas')
 var ctx = canvas.getContext('2d', { alpha: true })
-
 var up = document.getElementById('up')
 var down = document.getElementById('down')
 var left = document.getElementById('left')
 var right = document.getElementById('right')
 var voice = document.getElementById('voice')
-
 var cellSize = canvas.width / 20
+var voiceInput = false
+var currentScore = 0
+var highScore = 0
+var fps = 10
 
 var snake = {
   x: 10 * cellSize,
@@ -41,19 +43,9 @@ var snake = {
       this.y > canvas.height - cellSize ||
       this.y < 0
     ) {
-      // snake.death()
       this.xSpeed = this.xSpeed * -1
       this.ySpeed = this.ySpeed * -1
     }
-  },
-
-  death: function () {
-    this.x = 10 * cellSize
-    this.y = 10 * cellSize
-    this.xSpeed = 0
-    this.ySpeed = 0
-    this.tail = []
-    fruit.getNewPos()
   },
 
   show: function () {
@@ -61,7 +53,6 @@ var snake = {
       ctx.fillRect(this.tail[i].x, this.tail[i].y, cellSize, cellSize)
     }
     ctx.fillRect(this.x, this.y, cellSize, cellSize)
-    ctx.fillStyle = 'tomato'
   }
 }
 
@@ -76,18 +67,22 @@ var fruit = {
 
   show: function () {
     ctx.fillRect(this.x, this.y, cellSize, cellSize)
-    ctx.fillStyle = '#000000'
   }
 }
 
 function setup () {
   canvas.width = 300
   canvas.height = 300
+  ctx.font = '20px monospace'
+  if (document.cookie[document.cookie.length - 1] === undefined) {
+    document.cookie = `highScore=0; path=/`
+  }
 }
 
 function draw () {
   setTimeout(function () {
     window.requestAnimationFrame(draw)
+    highScore = document.cookie[document.cookie.length - 1]
     ctx.clearRect(0, 0, canvas.width, canvas.height)
     if (
       !(
@@ -97,54 +92,75 @@ function draw () {
         snake.y < fruit.y
       )
     ) {
-      snake.tail.push({ x: snake.x, y: snake.y })
+      currentScore++
       fruit.getNewPos()
+      snake.tail.push({ x: snake.x, y: snake.y })
+      if (currentScore > highScore) {
+        document.cookie = `highScore=${currentScore}; path=/`
+      }
     }
+    ctx.fillStyle = '#EC412F'
+    fruit.show()
+    ctx.fillStyle = '#000000'
     snake.update()
     snake.show()
-    fruit.show()
-  }, 1000 / 5)
+    ctx.fillText(`Score: ${currentScore}`, 5, 50)
+    ctx.fillText(`HighScore: ${highScore}`, 5, 25)
+  }, 1000 / fps)
 }
 
 up.addEventListener('click', function () {
+  fps = 10
   snake.move(0, -1)
 })
 
 down.addEventListener('click', function () {
+  fps = 10
   snake.move(0, 1)
 })
 
 left.addEventListener('click', function () {
+  fps = 10
   snake.move(-1, 0)
 })
 
 right.addEventListener('click', function () {
+  fps = 10
   snake.move(1, 0)
 })
 
 function keyPressed (e) {
-  if (e.keyCode === 38) {
-    snake.move(0, -1)
-  } else if (e.keyCode === 40) {
-    snake.move(0, 1)
-  } else if (e.keyCode === 37) {
-    snake.move(-1, 0)
-  } else if (e.keyCode === 39) {
-    snake.move(1, 0)
+  if (voiceInput === false) {
+    switch (e.keyCode) {
+      case 38:
+        fps = 10
+        snake.move(0, -1)
+        break
+      case 40:
+        fps = 10
+        snake.move(0, 1)
+        break
+      case 37:
+        fps = 10
+        snake.move(-1, 0)
+        break
+      case 39:
+        fps = 10
+        snake.move(1, 0)
+        break
+    }
   }
 }
 
 document.onkeyup = keyPressed
 
-setup()
-draw()
-
 if ('webkitSpeechRecognition' in window) {
-  var grammar =
-    '#JSGF V1.0; grammar directions; public <direction> = top | down | left | right ;'
-
   var recognition = new webkitSpeechRecognition()
   var speechRecognitionList = new webkitSpeechGrammarList()
+  var grammarList = 'top | down | left | right'
+  var grammar = `#JSGF V1.0; grammar directions; public <direction> = ${grammarList} ;`
+
+  voice.disabled = false
 
   speechRecognitionList.addFromString(grammar, 1)
   recognition.grammars = speechRecognitionList
@@ -153,26 +169,43 @@ if ('webkitSpeechRecognition' in window) {
   recognition.lang = 'en-US'
 
   voice.onclick = function () {
-    recognition.start()
-  }
-
-  recognition.onresult = function (event) {
-    var last = event.results.length - 1
-    var guess = event.results[last][0].transcript.trim().toLowerCase()
-
-    console.log(guess.trim())
-    if (guess === 'top') {
-      snake.move(0, -1)
-    } else if (guess === 'down') {
-      snake.move(0, 1)
-    } else if (guess === 'left') {
-      snake.move(-1, 0)
-    } else if (guess === 'right') {
-      snake.move(1, 0)
+    if (voiceInput) {
+      up.disabled = false
+      down.disabled = false
+      left.disabled = false
+      right.disabled = false
+      recognition.stop()
+      voiceInput = false
+    } else {
+      fps = 5
+      up.disabled = true
+      down.disabled = true
+      left.disabled = true
+      right.disabled = true
+      recognition.start()
+      voiceInput = true
     }
   }
 
-  recognition.onerror = function (event) {
-    console.log('Error occurred in recognition: ' + event.error)
+  recognition.onresult = function (event) {
+    var latest = event.results.length - 1
+    var guess = event.results[latest][0].transcript.trim().toLowerCase()
+
+    switch (guess) {
+      case 'top':
+        snake.move(0, -1)
+        break
+      case 'down':
+        snake.move(0, 1)
+        break
+      case 'left':
+        snake.move(-1, 0)
+        break
+      case 'right':
+        snake.move(1, 0)
+    }
   }
 }
+
+setup()
+draw()
