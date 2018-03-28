@@ -68,18 +68,275 @@
   <canvas id="canvas"></canvas>
   <section id="gamepad">
     <div>
-      <button id="up"><svg width="100%" height="100%" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;"><path d="M29.436,14.403l-22.832,31.472c-0.7,0.965 -0.799,2.239 -0.258,3.301c0.541,1.06 1.632,1.729 2.823,1.729l45.662,0c1.191,0 2.282,-0.669 2.823,-1.729c0.232,-0.454 0.346,-0.948 0.346,-1.44c0,-0.656 -0.204,-1.31 -0.604,-1.861l-22.832,-31.472c-0.595,-0.822 -1.548,-1.308 -2.564,-1.308c-1.016,0 -1.969,0.486 -2.564,1.308" style="fill:#fff;fill-rule:nonzero;"/></svg></button>
+      <button id="up">
+        <svg width="100%" height="100%" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+          xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;">
+          <path d="M29.436,14.403l-22.832,31.472c-0.7,0.965 -0.799,2.239 -0.258,3.301c0.541,1.06 1.632,1.729 2.823,1.729l45.662,0c1.191,0 2.282,-0.669 2.823,-1.729c0.232,-0.454 0.346,-0.948 0.346,-1.44c0,-0.656 -0.204,-1.31 -0.604,-1.861l-22.832,-31.472c-0.595,-0.822 -1.548,-1.308 -2.564,-1.308c-1.016,0 -1.969,0.486 -2.564,1.308"
+            style="fill:#fff;fill-rule:nonzero;" />
+        </svg>
+      </button>
     </div>
     <div>
-      <button id="left"><svg width="100%" height="100%" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;"><path d="M14.403,34.564l31.472,22.832c0.965,0.7 2.239,0.799 3.301,0.258c1.06,-0.541 1.729,-1.632 1.729,-2.823l0,-45.662c0,-1.191 -0.669,-2.282 -1.729,-2.823c-0.454,-0.232 -0.948,-0.346 -1.44,-0.346c-0.656,0 -1.31,0.204 -1.861,0.604l-31.472,22.832c-0.822,0.595 -1.308,1.548 -1.308,2.564c0,1.016 0.486,1.969 1.308,2.564" style="fill:#fff;fill-rule:nonzero;"/></svg></button>
-      <button id="voice" disabled><svg width="100%" height="100%" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;"><g><path d="M40.58,58l-17.16,0c-0.87,0 -1.576,-0.706 -1.576,-1.576c0,-0.871 0.706,-1.576 1.576,-1.576l17.16,0c0.87,0 1.576,0.705 1.576,1.576c0,0.87 -0.706,1.576 -1.576,1.576Z" style="fill:#fff;fill-rule:nonzero;"/><path d="M32,58c-0.87,0 -1.576,-0.706 -1.576,-1.576l0,-12.912c0,-0.871 0.706,-1.576 1.576,-1.576c0.87,0 1.576,0.705 1.576,1.576l0,12.912c0,0.87 -0.706,1.576 -1.576,1.576Z" style="fill:#fff;fill-rule:nonzero;"/><path d="M32.086,37.873l-0.172,0c-4.691,0 -8.494,-3.803 -8.494,-8.494l0,-15.012c0,-4.691 3.803,-8.494 8.494,-8.494l0.172,0c4.691,0 8.494,3.803 8.494,8.494l0,15.012c0,4.691 -3.803,8.494 -8.494,8.494Z" style="fill:#fff;fill-rule:nonzero;"/><path d="M32.086,44.148l-0.172,0c-3.945,0 -7.654,-1.536 -10.443,-4.326c-2.79,-2.789 -4.326,-6.498 -4.326,-10.443c0,-0.871 0.706,-1.576 1.576,-1.576c0.87,0 1.576,0.705 1.576,1.576c0,3.103 1.208,6.02 3.403,8.214c2.194,2.195 5.111,3.403 8.214,3.403l0.172,0c3.103,0 6.02,-1.208 8.214,-3.403c2.194,-2.194 3.403,-5.111 3.403,-8.214c0,-0.871 0.705,-1.576 1.576,-1.576c0.87,0 1.576,0.705 1.576,1.576c0,3.945 -1.536,7.654 -4.326,10.443c-2.789,2.79 -6.498,4.326 -10.443,4.326Z" style="fill:#fff;fill-rule:nonzero;"/></g></svg></button>
-      <button id="right"><svg width="100%" height="100%" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;"><path d="M49.597,29.436l-31.472,-22.832c-0.965,-0.7 -2.239,-0.799 -3.301,-0.258c-1.06,0.541 -1.729,1.632 -1.729,2.823l0,45.662c0,1.191 0.669,2.282 1.729,2.823c0.454,0.232 0.948,0.346 1.44,0.346c0.656,0 1.31,-0.204 1.861,-0.604l31.472,-22.832c0.822,-0.595 1.308,-1.548 1.308,-2.564c0,-1.016 -0.486,-1.969 -1.308,-2.564" style="fill:#fff;fill-rule:nonzero;"/></svg></button>
+      <button id="left">
+        <svg width="100%" height="100%" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+          xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;">
+          <path d="M14.403,34.564l31.472,22.832c0.965,0.7 2.239,0.799 3.301,0.258c1.06,-0.541 1.729,-1.632 1.729,-2.823l0,-45.662c0,-1.191 -0.669,-2.282 -1.729,-2.823c-0.454,-0.232 -0.948,-0.346 -1.44,-0.346c-0.656,0 -1.31,0.204 -1.861,0.604l-31.472,22.832c-0.822,0.595 -1.308,1.548 -1.308,2.564c0,1.016 0.486,1.969 1.308,2.564"
+            style="fill:#fff;fill-rule:nonzero;" />
+        </svg>
+      </button>
+      <button id="voice" disabled>
+        <svg width="100%" height="100%" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+          xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;">
+          <g>
+            <path d="M40.58,58l-17.16,0c-0.87,0 -1.576,-0.706 -1.576,-1.576c0,-0.871 0.706,-1.576 1.576,-1.576l17.16,0c0.87,0 1.576,0.705 1.576,1.576c0,0.87 -0.706,1.576 -1.576,1.576Z"
+              style="fill:#fff;fill-rule:nonzero;" />
+            <path d="M32,58c-0.87,0 -1.576,-0.706 -1.576,-1.576l0,-12.912c0,-0.871 0.706,-1.576 1.576,-1.576c0.87,0 1.576,0.705 1.576,1.576l0,12.912c0,0.87 -0.706,1.576 -1.576,1.576Z"
+              style="fill:#fff;fill-rule:nonzero;" />
+            <path d="M32.086,37.873l-0.172,0c-4.691,0 -8.494,-3.803 -8.494,-8.494l0,-15.012c0,-4.691 3.803,-8.494 8.494,-8.494l0.172,0c4.691,0 8.494,3.803 8.494,8.494l0,15.012c0,4.691 -3.803,8.494 -8.494,8.494Z"
+              style="fill:#fff;fill-rule:nonzero;" />
+            <path d="M32.086,44.148l-0.172,0c-3.945,0 -7.654,-1.536 -10.443,-4.326c-2.79,-2.789 -4.326,-6.498 -4.326,-10.443c0,-0.871 0.706,-1.576 1.576,-1.576c0.87,0 1.576,0.705 1.576,1.576c0,3.103 1.208,6.02 3.403,8.214c2.194,2.195 5.111,3.403 8.214,3.403l0.172,0c3.103,0 6.02,-1.208 8.214,-3.403c2.194,-2.194 3.403,-5.111 3.403,-8.214c0,-0.871 0.705,-1.576 1.576,-1.576c0.87,0 1.576,0.705 1.576,1.576c0,3.945 -1.536,7.654 -4.326,10.443c-2.789,2.79 -6.498,4.326 -10.443,4.326Z"
+              style="fill:#fff;fill-rule:nonzero;" />
+          </g>
+        </svg>
+      </button>
+      <button id="right">
+        <svg width="100%" height="100%" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+          xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;">
+          <path d="M49.597,29.436l-31.472,-22.832c-0.965,-0.7 -2.239,-0.799 -3.301,-0.258c-1.06,0.541 -1.729,1.632 -1.729,2.823l0,45.662c0,1.191 0.669,2.282 1.729,2.823c0.454,0.232 0.948,0.346 1.44,0.346c0.656,0 1.31,-0.204 1.861,-0.604l31.472,-22.832c0.822,-0.595 1.308,-1.548 1.308,-2.564c0,-1.016 -0.486,-1.969 -1.308,-2.564"
+            style="fill:#fff;fill-rule:nonzero;" />
+        </svg>
+      </button>
     </div>
     <div>
-      <button id="down"><svg width="100%" height="100%" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;"><path d="M34.564,49.597l22.832,-31.472c0.7,-0.965 0.799,-2.239 0.258,-3.301c-0.541,-1.06 -1.632,-1.729 -2.823,-1.729l-45.662,0c-1.191,0 -2.282,0.669 -2.823,1.729c-0.232,0.454 -0.346,0.948 -0.346,1.44c0,0.656 0.204,1.31 0.604,1.861l22.832,31.472c0.595,0.822 1.548,1.308 2.564,1.308c1.016,0 1.969,-0.486 2.564,-1.308" style="fill:#fff;fill-rule:nonzero;"/></svg></button>
+      <button id="down">
+        <svg width="100%" height="100%" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+          xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;">
+          <path d="M34.564,49.597l22.832,-31.472c0.7,-0.965 0.799,-2.239 0.258,-3.301c-0.541,-1.06 -1.632,-1.729 -2.823,-1.729l-45.662,0c-1.191,0 -2.282,0.669 -2.823,1.729c-0.232,0.454 -0.346,0.948 -0.346,1.44c0,0.656 0.204,1.31 0.604,1.861l22.832,31.472c0.595,0.822 1.548,1.308 2.564,1.308c1.016,0 1.969,-0.486 2.564,-1.308"
+            style="fill:#fff;fill-rule:nonzero;" />
+        </svg>
+      </button>
     </div>
   </section>
-  <script src="./index.js"></script>
+  <script>
+    var canvas = document.getElementById('canvas')
+    var ctx = canvas.getContext('2d', {
+      alpha: true
+    })
+    var up = document.getElementById('up')
+    var down = document.getElementById('down')
+    var left = document.getElementById('left')
+    var right = document.getElementById('right')
+    var voice = document.getElementById('voice')
+    var cellSize = canvas.width / 20
+    var voiceInput = false
+    var currentScore = 0
+    var highScore = 0
+    var fps = 10
+
+    var snake = {
+      x: 10 * cellSize,
+      y: 10 * cellSize,
+      xSpeed: 0,
+      ySpeed: 0,
+      tail: [],
+
+      move: function (x, y) {
+        this.xSpeed = x
+        this.ySpeed = y
+      },
+
+      update: function () {
+        for (var i = 0; i < this.tail.length - 1; i++) {
+          this.tail[i].x = this.tail[i + 1].x || this.x
+          this.tail[i].y = this.tail[i + 1].y || this.y
+        }
+
+        if (this.tail.length > 0) {
+          this.tail[this.tail.length - 1].x = this.x
+          this.tail[this.tail.length - 1].y = this.y
+        }
+
+        this.x = this.x + this.xSpeed * cellSize
+        this.y = this.y + this.ySpeed * cellSize
+
+        if (
+          this.x > canvas.width - cellSize ||
+          this.x < 0 ||
+          this.y > canvas.height - cellSize ||
+          this.y < 0
+        ) {
+          this.xSpeed = this.xSpeed * -1
+          this.ySpeed = this.ySpeed * -1
+        }
+      },
+
+      show: function () {
+        for (var i = 0; i < this.tail.length; i++) {
+          ctx.fillRect(this.tail[i].x, this.tail[i].y, cellSize, cellSize)
+        }
+        ctx.fillRect(this.x, this.y, cellSize, cellSize)
+      }
+    }
+
+    var fruit = {
+      x: Math.floor(Math.random() * 20 + 1) * cellSize - cellSize,
+      y: Math.floor(Math.random() * 20 + 1) * cellSize - cellSize,
+
+      getNewPos: function () {
+        this.x = Math.floor(Math.random() * 20 + 1) * cellSize - cellSize
+        this.y = Math.floor(Math.random() * 20 + 1) * cellSize - cellSize
+      },
+
+      show: function () {
+        ctx.fillRect(this.x, this.y, cellSize, cellSize)
+      }
+    }
+
+    function setup() {
+      canvas.width = 300
+      canvas.height = 300
+      ctx.font = '20px monospace'
+      if (document.cookie === undefined) {
+        document.cookie = 'highScore=0; path=/'
+      }
+    }
+
+    function draw() {
+      setTimeout(function () {
+        window.requestAnimationFrame(draw)
+        highScore = document.cookie.split('=')[1]
+        ctx.clearRect(0, 0, canvas.width, canvas.height)
+        if (!(
+            snake.x > fruit.x ||
+            snake.x < fruit.x ||
+            snake.y > fruit.y ||
+            snake.y < fruit.y
+          )) {
+          fruit.getNewPos()
+          snake.tail.push({
+            x: snake.x,
+            y: snake.y
+          })
+          currentScore++
+          if (currentScore > highScore) {
+            document.cookie = `highScore=${currentScore}; path=/`
+          }
+        }
+        ctx.fillStyle = '#EC412F'
+        fruit.show()
+        ctx.fillStyle = '#000000'
+        snake.update()
+        snake.show()
+        if (document.cookie) {
+          ctx.fillText(`HighScore: ${highScore}`, 5, 25)
+          ctx.fillText(`Score: ${currentScore}`, 5, 50)
+        } else {
+          ctx.fillText(`Score: ${currentScore}`, 5, 25)
+        }
+      }, 1000 / fps)
+    }
+
+    up.addEventListener('click', function () {
+      fps = 10
+      snake.move(0, -1)
+    })
+
+    down.addEventListener('click', function () {
+      fps = 10
+      snake.move(0, 1)
+    })
+
+    left.addEventListener('click', function () {
+      fps = 10
+      snake.move(-1, 0)
+    })
+
+    right.addEventListener('click', function () {
+      fps = 10
+      snake.move(1, 0)
+    })
+
+    function keyPressed(e) {
+      if (voiceInput === false) {
+        switch (e.keyCode) {
+          case 38:
+            fps = 10
+            snake.move(0, -1)
+            break
+          case 40:
+            fps = 10
+            snake.move(0, 1)
+            break
+          case 37:
+            fps = 10
+            snake.move(-1, 0)
+            break
+          case 39:
+            fps = 10
+            snake.move(1, 0)
+            break
+        }
+      }
+    }
+
+    if ('webkitSpeechRecognition' in window) {
+      var recognition = new webkitSpeechRecognition()
+      var speechRecognitionList = new webkitSpeechGrammarList()
+      var grammarList = 'top | down | left | right'
+      var grammar = `#JSGF V1.0; grammar directions; public <direction> = ${grammarList} ;`
+
+      voice.disabled = false
+
+      speechRecognitionList.addFromString(grammar, 1)
+      recognition.grammars = speechRecognitionList
+      recognition.interimResults = true
+      recognition.continuous = true
+      recognition.lang = 'en-US'
+
+      voice.onclick = function () {
+        if (voiceInput) {
+          up.disabled = false
+          down.disabled = false
+          left.disabled = false
+          right.disabled = false
+          recognition.stop()
+          voiceInput = false
+        } else {
+          fps = 5
+          up.disabled = true
+          down.disabled = true
+          left.disabled = true
+          right.disabled = true
+          recognition.start()
+          voiceInput = true
+        }
+      }
+
+      recognition.onresult = function (event) {
+        var latest = event.results.length - 1
+        var guess = event.results[latest][0].transcript.trim().toLowerCase()
+
+        switch (guess) {
+          case 'top':
+            snake.move(0, -1)
+            break
+          case 'down':
+            snake.move(0, 1)
+            break
+          case 'left':
+            snake.move(-1, 0)
+            break
+          case 'right':
+            snake.move(1, 0)
+        }
+      }
+    }
+
+    document.onkeyup = keyPressed
+
+    setup()
+    draw()
+  </script>
 </body>
 
 </html>
