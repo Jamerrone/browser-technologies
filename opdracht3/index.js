@@ -74,15 +74,15 @@ function setup () {
   canvas.width = 300
   canvas.height = 300
   ctx.font = '20px monospace'
-  if (getCookie(highScore) === undefined) {
-    document.cookie = `highScore=0; path=/`
+  if (document.cookie === undefined) {
+    document.cookie = 'highScore=0; path=/'
   }
 }
 
 function draw () {
   setTimeout(function () {
     window.requestAnimationFrame(draw)
-    highScore = getCookie(highScore)
+    highScore = document.cookie.split('=')[1]
     ctx.clearRect(0, 0, canvas.width, canvas.height)
     if (
       !(
@@ -111,17 +111,6 @@ function draw () {
       ctx.fillText(`Score: ${currentScore}`, 5, 25)
     }
   }, 1000 / fps)
-}
-
-function getCookie (name) {
-  var value = '; ' + document.cookie
-  var parts = value.split('; ' + name + '=')
-  if (parts.length == 2) {
-    return parts
-      .pop()
-      .split(';')
-      .shift()
-  }
 }
 
 up.addEventListener('click', function () {
