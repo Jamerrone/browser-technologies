@@ -74,15 +74,19 @@ function setup () {
   canvas.width = 300
   canvas.height = 300
   ctx.font = '20px monospace'
-  if (document.cookie[document.cookie.length - 1] === undefined) {
-    document.cookie = `highScore=0; path=/`
+  if (document.cookie) {
+    if (document.cookie[document.cookie.length - 1] === undefined) {
+      document.cookie = `highScore=0; path=/`
+    }
   }
 }
 
 function draw () {
   setTimeout(function () {
     window.requestAnimationFrame(draw)
-    highScore = document.cookie[document.cookie.length - 1]
+    if (document.cookie) {
+      highScore = document.cookie[document.cookie.length - 1]
+    }
     ctx.clearRect(0, 0, canvas.width, canvas.height)
     if (
       !(
@@ -95,8 +99,10 @@ function draw () {
       currentScore++
       fruit.getNewPos()
       snake.tail.push({ x: snake.x, y: snake.y })
-      if (currentScore > highScore) {
-        document.cookie = `highScore=${currentScore}; path=/`
+      if (document.cookie) {
+        if (currentScore > highScore) {
+          document.cookie = `highScore=${currentScore}; path=/`
+        }
       }
     }
     ctx.fillStyle = '#EC412F'
@@ -104,8 +110,12 @@ function draw () {
     ctx.fillStyle = '#000000'
     snake.update()
     snake.show()
-    ctx.fillText(`Score: ${currentScore}`, 5, 50)
-    ctx.fillText(`HighScore: ${highScore}`, 5, 25)
+    if (document.cookie) {
+      ctx.fillText(`Score: ${currentScore}`, 5, 50)
+      ctx.fillText(`HighScore: ${highScore}`, 5, 25)
+    } else {
+      ctx.fillText(`Score: ${currentScore}`, 5, 25)
+    }
   }, 1000 / fps)
 }
 
