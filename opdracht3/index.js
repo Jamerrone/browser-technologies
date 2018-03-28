@@ -92,9 +92,9 @@ function draw () {
         snake.y < fruit.y
       )
     ) {
-      currentScore++
       fruit.getNewPos()
       snake.tail.push({ x: snake.x, y: snake.y })
+      currentScore++
       if (currentScore > highScore) {
         document.cookie = `highScore=${currentScore}; path=/`
       }
