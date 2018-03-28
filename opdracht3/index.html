@@ -220,7 +220,7 @@
           })
           currentScore++
           if (currentScore > highScore) {
-            document.cookie = `highScore=${currentScore}; path=/`
+            document.cookie = 'highScore=' + currentScore + '; path=/'
           }
         }
         ctx.fillStyle = '#EC412F'
@@ -229,10 +229,10 @@
         snake.update()
         snake.show()
         if (document.cookie) {
-          ctx.fillText(`HighScore: ${highScore}`, 5, 25)
-          ctx.fillText(`Score: ${currentScore}`, 5, 50)
+          ctx.fillText('HighScore: ' + highScore, 5, 25)
+          ctx.fillText('Score: ' + currentScore, 5, 50)
         } else {
-          ctx.fillText(`Score: ${currentScore}`, 5, 25)
+          ctx.fillText('Score: ' + currentScore, 5, 25)
         }
       }, 1000 / fps)
     }
@@ -284,7 +284,7 @@
       var recognition = new webkitSpeechRecognition()
       var speechRecognitionList = new webkitSpeechGrammarList()
       var grammarList = 'top | down | left | right'
-      var grammar = `#JSGF V1.0; grammar directions; public <direction> = ${grammarList} ;`
+      var grammar = '#JSGF V1.0; grammar directions; public <direction> = ' + grammarList + ';'
 
       voice.disabled = false
 
